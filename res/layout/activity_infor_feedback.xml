@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".InforFeedbackActivity" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:id="@+id/mainFrame_head"        
+        android:background="#56606c">
+        <ImageView 
+            android:id="@+id/return_button"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/return_back"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:text="信息反馈"/>
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/search"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/mainFrame_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="#223136">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_centerInParent="true"
+            android:textColor="#7b8c92"
+            android:text="@string/author_information"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/feedback_main"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/mainFrame_head"
+		android:layout_above="@id/mainFrame_bottom"
+		>
+        <TextView 
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#56606c"
+            android:textSize="14sp"
+            android:text="有啥想说的，好的，不好的，意见，建议，情绪，都可以反馈给我们,虽然我们不一定会看..."
+            />
+        <EditText
+            android:id="@+id/feedback_infor"
+            android:layout_width="492dp"
+            android:layout_height="370dp"
+            android:textCursorDrawable="@null"
+            android:background="#80ffffff"
+            android:layout_centerHorizontal="true"
+            android:gravity="top"
+            android:textColor="#272727"/>
+            
+         <Button 
+             android:id="@+id/submit_feedback"
+             android:layout_alignParentBottom="true"
+             android:layout_centerHorizontal="true"
+             android:layout_height="wrap_content"
+             android:layout_width="150dp"
+             android:textSize="20sp"
+             android:text="提交"
+             android:textColor="#dcdce1"/>                          
+        
+        
+    </RelativeLayout>
+    
+    
+    
+    
+</RelativeLayout>

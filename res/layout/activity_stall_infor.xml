@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".StallInforActivity" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:id="@+id/mainFrame_head"        
+        android:background="#56606c">
+        <ImageView 
+            android:id="@+id/return_button"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/return_back"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:text="查看摊位"/>
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/search"/>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/mainFrame_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="#223136">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_centerInParent="true"
+            android:textColor="#7b8c92"
+            android:text="@string/author_information"/>
+    </RelativeLayout>
+    
+     <RelativeLayout
+		android:id="@+id/stall_infor_mainframe"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@id/mainFrame_bottom"
+		android:layout_below="@id/mainFrame_head"	
+		android:layout_marginTop="25dp"	
+        >
+        <RelativeLayout
+            android:id="@+id/stall_infor_shell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView 
+                android:id="@+id/cllect_stall_button"
+                android:src="@drawable/collect_stall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                />
+            <RelativeLayout
+                android:id="@+id/cllect_stall_title"
+                android:layout_toLeftOf="@id/cllect_stall_button"
+                android:layout_alignBottom="@id/cllect_stall_button"
+            	android:layout_width="492dp"
+                android:layout_height="94dp"
+                android:layout_centerHorizontal="true"
+                android:background="#66333a42">
+          <!--        
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/stall_title_nouse"
+                        android:textColor="#56606c"
+                        android:textSize="18sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"
+                        android:text="社团："/>
+           -->             
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/stall_infor_name"
+                        android:textColor="#56606c"
+                        android:textSize="20sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_centerHorizontal="true"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="进击的小巨人"                        
+                    />               
+
+                    <TextView 
+                        android:id="@+id/stall_infor_tanwei"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#56606c"
+                        android:textSize="18sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="摊位："                        
+                    />                
+
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/stall_infor_code"
+                        android:layout_toRightOf="@id/stall_infor_tanwei"
+                        android:layout_alignBottom="@id/stall_infor_tanwei"
+                        android:textColor="#56606c"
+                        android:textSize="18sp"
+                        android:text="B3"                        
+                    />                
+                    
+            </RelativeLayout>
+        </RelativeLayout>
+        
+        <ListView
+            android:layout_below="@id/stall_infor_shell"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/stall_item_list"
+            android:divider="#00000000"
+            android:dividerHeight="10dp"/>
+        
+    </RelativeLayout>
+    
+    
+    
+    
+
+</RelativeLayout>

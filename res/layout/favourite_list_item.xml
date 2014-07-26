@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/favourite_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+       <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/favourite_left"
+          android:layout_centerVertical="true"
+          android:background="@drawable/favourite_left"
+          >
+          <TextView 
+              android:id="@+id/favourite_stall_code"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textColor="#dcdce1"
+              android:textSize="15sp"
+              />
+           
+       </RelativeLayout> 
+
+       
+       
+       
+       
+       <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/favourite_right"
+          android:background="@drawable/favourite_right"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          >
+          <ImageView 
+              android:id="@+id/favourite_cancer_collect"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:src="@drawable/cancer_collect_button"
+              />
+           
+       </RelativeLayout> 
+       
+       
+       
+       
+       
+       <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/favourite_middle"
+          android:layout_centerVertical="true"
+          android:background="@drawable/favourite_main"
+          android:layout_toRightOf="@id/favourite_left"
+          >
+          <TextView 
+              android:id="@+id/favourite_stall_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#223136"
+              android:textSize="17sp"
+              android:layout_centerVertical="true"
+              android:layout_marginLeft="10dp"
+              />
+           
+       </RelativeLayout> 
+       
+       
+    </RelativeLayout>

@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".HomeActivity" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:id="@+id/mainFrame_head"        
+        android:background="#56606c">
+        <ImageView 
+            android:id="@+id/collect_button"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/collect"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:text="CC离线场刊APP"/>
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/search"/>"
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/mainFrame_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="#223136">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_centerInParent="true"
+            android:textColor="#7b8c92"
+            android:text="@string/author_information"/>"
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/mainFrame_preview"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@id/mainFrame_bottom"
+        android:background="#33223136">
+        
+    </RelativeLayout>
+    
+     
+    
+    
+    
+    
+    
+    
+    <LinearLayout
+        android:id="@+id/choose_button_frame"
+        android:layout_height="20dp"
+        android:layout_width="match_parent"        
+        android:orientation="vertical"
+        android:layout_below="@id/mainFrame_head"
+        android:layout_above="@id/mainFrame_preview">
+        
+        
+        
+        <RelativeLayout
+            android:id="@+id/stall_list"
+			android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/mainframebutton"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+                <TextView 
+                    android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:layout_centerInParent="true"
+                	android:textSize="20sp"
+                	android:textColor="#ffffff"
+                	android:text="摊位列表"/>
+        </RelativeLayout>
+
+        
+        
+        
+        <RelativeLayout
+            android:id="@+id/stall_map"
+			android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/mainframebutton"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+                <TextView 
+                    android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:layout_centerInParent="true"
+                	android:textSize="20sp"
+                	android:textColor="#ffffff"
+                	android:text="场地图"/>
+        </RelativeLayout>
+        
+        
+        
+        
+        <RelativeLayout
+            android:id="@+id/stall_tranfic_info"
+			android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/mainframebutton"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+                <TextView 
+                    android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:layout_centerInParent="true"
+                	android:textSize="20sp"
+                	android:textColor="#ffffff"
+                	android:text="交通信息"/>
+        </RelativeLayout>
+        
+        
+        <RelativeLayout
+            android:id="@+id/stall_feedback"
+			android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/mainframebutton"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+                <TextView 
+                    android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:layout_centerInParent="true"
+                	android:textSize="20sp"
+                	android:textColor="#ffffff"
+                	android:text="信息反馈"/>
+        </RelativeLayout>
+        
+        
+        
+        
+    </LinearLayout>
+    
+</RelativeLayout>

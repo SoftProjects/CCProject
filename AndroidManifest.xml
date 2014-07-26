@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ccproject.activity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.NoActionBar" >
+        <activity
+            android:name="com.ccproject.activity.HomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.StallListActivity"
+            android:label="@string/title_activity_stall_list" >
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.InforFeedbackActivity"
+            android:label="@string/title_activity_infor_feedback" >
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.StallSearchActivity"
+            android:label="@string/title_activity_stall_search"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.MyFavoriteActivity"
+            android:label="@string/title_activity_my_favorite" >
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.StallInforActivity"
+            android:label="@string/title_activity_stall_infor" >
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.TextActivity"
+            android:label="@string/title_activity_text" >
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.SiteMapActivity"
+            android:label="@string/title_activity_site_map" >
+        </activity>
+        <activity
+            android:name="com.ccproject.activity.TrafficInforActivity"
+            android:label="@string/title_activity_traffic_infor" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    tools:context=".StallSearchActivity" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:id="@+id/mainFrame_head"        
+        android:background="#56606c">
+        <ImageView 
+            android:id="@+id/return_button"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/return_back"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:text="搜索摊位"/>
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/search"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mainFrame_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="#223136">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_centerInParent="true"
+            android:textColor="#7b8c92"
+            android:text="@string/author_information"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+		android:id="@+id/serach_mainframe"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@id/mainFrame_bottom"
+		android:layout_below="@id/mainFrame_head"	
+		android:layout_marginTop="25dp"	
+        >
+        <RelativeLayout
+            android:id="@+id/search_shell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView 
+                android:id="@+id/search_go_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/search_stall"
+                android:layout_alignParentRight="true"
+                />
+            <EditText 
+                android:id="@+id/search_key"
+                android:layout_width="492dp"
+                android:layout_height="50dp"
+                android:layout_toLeftOf="@id/search_go_button"
+                android:background="#ffffff"
+                android:textColor="#272727"
+                android:singleLine="true"
+                android:textCursorDrawable="@null"
+                />
+        </RelativeLayout>
+<!--          
+        <ListView
+            android:layout_below="@id/search_shell"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/search_result_list"
+            android:divider="#00000000"
+            android:dividerHeight="10dp"/>
+-->
+        <FrameLayout 
+            android:layout_below="@id/search_shell"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/search_result_list_frame"            
+            />
+
+        
+    </RelativeLayout>
+    
+    
+    
+</RelativeLayout>

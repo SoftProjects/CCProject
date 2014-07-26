@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CCProject</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_stall_list">StallListActivity</string>
+    <string name="author_information">Ver.1.2.0 build-2014.6.23 Alpha</string>
+    <string name="title_activity_infor_feedback">InforFeedbackActivity</string>
+    <string name="title_activity_stall_search">StallSearchActivity</string>
+    <string name="title_activity_my_favorite">MyFavoriteActivity</string>
+    <string name="title_activity_stall_infor">StallInforActivity</string>
+    <string name="title_activity_text">TextActivity</string>
+    <string name="title_activity_site_map">SiteMapActivity</string>
+    <string name="title_activity_traffic_infor">TrafficInforActivity</string>
+
+</resources>

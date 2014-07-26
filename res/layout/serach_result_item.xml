@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:id="@+id/search_result_frame"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout
+            android:id="@+id/serarch_nouse_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_stall_price"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical" >
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#dcdce1"
+                android:layout_marginTop="10dp"
+                android:text="定价"
+                android:textSize="14sp"/>
+            
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+            	<TextView 
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:id="@+id/search_result_price"
+                	android:layout_marginTop="5dp"
+                	android:textSize="16sp"
+                	android:textColor="#dcdce1"
+                
+                />
+            	
+            	<TextView 
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:layout_marginTop="5dp"
+                	android:textSize="16sp"
+                	android:textColor="#dcdce1"
+                	android:text="元"
+                />
+            		
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+        
+        
+        <LinearLayout
+            android:id="@+id/search_stall_infor"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/serarch_nouse_right"
+            android:background="@drawable/search_stall_result_infor">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_result_title"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="16sp"
+                android:textColor="#223136"
+                android:ellipsize="end" 
+                android:singleLine="true"
+                />
+                
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal">
+                <TextView 
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:textSize="14sp"
+                	android:textColor="#56606c"
+                	android:text="社团："
+                    />
+                <TextView 
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:id="@+id/search_result_club_name"
+                	android:textSize="14sp"
+                	android:textColor="#56606c"
+                	
+                    />
+                
+                <TextView 
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:layout_marginLeft="5dp"
+                	android:textSize="14sp"
+                	android:textColor="#56606c"
+                	android:text="("
+                    />
+                <TextView 
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:id="@+id/search_result_club_code"
+                	android:textSize="14sp"
+                	android:layout_marginLeft="3dp"
+                	android:layout_marginRight="3dp"
+                	android:textColor="#56606c"
+                	
+                    />
+                <TextView 
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:textSize="14sp"
+                	android:textColor="#56606c"
+                	android:text=")"
+                    />
+                
+            </LinearLayout>
+            
+            
+        </LinearLayout>
+        
+        
+    </RelativeLayout>    
+</RelativeLayout>
