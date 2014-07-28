@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.Menu;
@@ -23,38 +25,48 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		Controller.instance(this).initial();
+		
 //		Controller.instance(this).update(new Handler());
+		
+		
 		Controller.instance(this).update(new Handler(){
-
+			private ProgressDialog mDialog;
 			@Override
 			public void handleMessage(Message msg) {
 				// TODO Auto-generated method stub
 				switch(msg.what){
-				     case 6 : //刚刚发现数据更新
-				    	
+				     case 6 : //刚刚发现数据更新 //checkupdate
 				    	 break;
 				     case 0 : //(开始联网)
-				       
+				    	 mDialog = ProgressDialog.show(HomeActivity.this, "正在更新", "正在玩命加载数据中...",true);
 				    	 break;
 				     case 5 : //数据不需要更新
 				         break;
 				     case 1 : //数据正在下载 
-				    	 
+				    	 break;
 				     case 2 :// 数据入库
-				    	 
+				    	 break;
 				     case 3 : //更新成功
-				    	 
-				     case 4 :// 更新失败 				     	 
+				    	 mDialog.dismiss();
+				    	 showDialog("更新完成么么哒~");
+				    	 break;
+				     case 4 :// 更新失败
+				    	 mDialog.dismiss();
+				    	 showDialog("更新失败！请重新检查联网情况");
+				    	 break;
+				     default : break;
 				     //progressDiolog
-				     
 				};
 				super.handleMessage(msg);
 			}
-	          		
 		});
+		
 		initView();
 		initListener();
 	}
+    private AlertDialog showDialog(String msg){
+    	return new AlertDialog.Builder(HomeActivity.this).setTitle("来自CC的消息").setMessage(msg).setPositiveButton("确定", null).show(); 
+    }    
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

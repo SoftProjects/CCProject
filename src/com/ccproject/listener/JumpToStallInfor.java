@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 public class JumpToStallInfor implements OnClickListener{
     private CircleModel model;
@@ -26,7 +27,7 @@ public class JumpToStallInfor implements OnClickListener{
 		bundle.putInt("selectedModelCid", model.getCid());
 		intent.putExtras(bundle);
 		mContext.startActivity(intent);
-
+//		Toast.makeText(mContext, "收藏成功", Toast.LENGTH_SHORT).show(); 
 	}
 
 }
