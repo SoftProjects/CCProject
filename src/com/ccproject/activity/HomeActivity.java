@@ -26,6 +26,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
+	private int  TimeInterval = 3; //viewpager切换时间间隔是3秒
     private int currentItem = 0;
     private ScheduledExecutorService  scheduledExecutorService;
 	private ViewPager viewpage;
@@ -207,7 +208,7 @@ public class HomeActivity extends Activity {
 	private void StartScroll() {
 		// TODO Auto-generated method stub
 		scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-		scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 3, TimeUnit.SECONDS);
+		scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, TimeInterval, TimeUnit.SECONDS);
 	}
 	@Override
 	protected void onStop() {
@@ -221,7 +222,7 @@ public class HomeActivity extends Activity {
 		// TODO Auto-generated method stub
 		if(scheduledExecutorService!=null){
 			scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-			scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 3, TimeUnit.SECONDS);
+			scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, TimeInterval, TimeUnit.SECONDS);
 		}
 		super.onStart();
 	}

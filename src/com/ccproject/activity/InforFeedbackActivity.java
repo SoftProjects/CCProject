@@ -20,7 +20,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class InforFeedbackActivity extends Activity {
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
