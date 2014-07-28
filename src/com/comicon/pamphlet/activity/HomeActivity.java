@@ -7,11 +7,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import com.comicon.papmphlet.R;
-import com.comicon.papmphlet.adapter.ViewPagerAdapter;
-import com.comicon.papmphlet.listener.UpdateDataListener;
+import com.comicon.pamphlet.R;
+import com.comicon.pamphlet.adapter.ViewPagerAdapter;
 import com.comicon.pamphlet.data.cotroller.Controller;
 import com.comicon.pamphlet.data.model.CircleModel;
+import com.comicon.pamphlet.listener.UpdateDataListener;
 
 import android.os.Bundle;
 import android.os.Handler;

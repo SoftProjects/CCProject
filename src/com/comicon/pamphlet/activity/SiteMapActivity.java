@@ -2,10 +2,10 @@ package com.comicon.pamphlet.activity;
 
 import java.io.File;
 
-import com.comicon.papmphlet.R;
-import com.comicon.papmphlet.listener.JumpToSearchListener;
-import com.comicon.papmphlet.listener.ReturnListener;
+import com.comicon.pamphlet.R;
 import com.comicon.pamphlet.data.appsetting.Data;
+import com.comicon.pamphlet.listener.JumpToSearchListener;
+import com.comicon.pamphlet.listener.ReturnListener;
 import com.common.imageLoader.ImageLoader;
 
 import android.net.Uri;

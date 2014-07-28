@@ -2,12 +2,12 @@ package com.comicon.pamphlet.activity;
 
 import java.util.List;
 
-import com.comicon.papmphlet.R;
-import com.comicon.papmphlet.adapter.FavouriteStallAdapter;
-import com.comicon.papmphlet.listener.JumpToSearchListener;
-import com.comicon.papmphlet.listener.ReturnListener;
+import com.comicon.pamphlet.R;
+import com.comicon.pamphlet.adapter.FavouriteStallAdapter;
 import com.comicon.pamphlet.data.cotroller.Controller;
 import com.comicon.pamphlet.data.model.CircleModel;
+import com.comicon.pamphlet.listener.JumpToSearchListener;
+import com.comicon.pamphlet.listener.ReturnListener;
 
 import android.os.Bundle;
 import android.app.Activity;

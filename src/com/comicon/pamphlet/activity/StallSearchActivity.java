@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.comicon.papmphlet.R;
-import com.comicon.papmphlet.bean.SearchedStallItem;
-import com.comicon.papmphlet.fragment.NoViewFragment;
-import com.comicon.papmphlet.fragment.StallSearchDoneFragment;
-import com.comicon.papmphlet.fragment.WaitFragment;
-import com.comicon.papmphlet.listener.JumpToSearchListener;
-import com.comicon.papmphlet.listener.ReturnListener;
+import com.comicon.pamphlet.R;
+import com.comicon.pamphlet.bean.SearchedStallItem;
 import com.comicon.pamphlet.data.cotroller.Controller;
 import com.comicon.pamphlet.data.model.WorkModel;
+import com.comicon.pamphlet.fragment.NoViewFragment;
+import com.comicon.pamphlet.fragment.StallSearchDoneFragment;
+import com.comicon.pamphlet.fragment.WaitFragment;
+import com.comicon.pamphlet.listener.JumpToSearchListener;
+import com.comicon.pamphlet.listener.ReturnListener;
 
 import android.os.Bundle;
 import android.os.Handler;
