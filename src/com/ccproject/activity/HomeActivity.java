@@ -1,6 +1,11 @@
 package com.ccproject.activity;
 
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import com.ccproject.adapter.ViewPagerAdapter;
 import com.comicon.pamphlet.data.cotroller.Controller;
 
 import android.os.Bundle;
@@ -10,6 +15,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
@@ -17,48 +23,61 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class HomeActivity extends Activity {
-
+    private int currentItem = 0;
+    private ScheduledExecutorService  scheduledExecutorService;
+	private ViewPager viewpage;
+	//用于定时切换viewpager中的文字的handler
+	private Handler viewPagerHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			viewpage.setCurrentItem(currentItem, true);
+		}
+	};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		Controller.instance(this).initial();
 		
-//		Controller.instance(this).update(new Handler());
-		
-		
-		Controller.instance(this).update(new Handler(){
+		Controller.instance(this).checkUpdate(new Handler(){
 			private ProgressDialog mDialog;
+
 			@Override
 			public void handleMessage(Message msg) {
 				// TODO Auto-generated method stub
 				switch(msg.what){
-				     case 6 : //刚刚发现数据更新 //checkupdate
-				    	 break;
-				     case 0 : //(开始联网)
-				    	 mDialog = ProgressDialog.show(HomeActivity.this, "正在更新", "正在玩命加载数据中...",true);
-				    	 break;
-				     case 5 : //数据不需要更新
-				         break;
-				     case 1 : //数据正在下载 
-				    	 break;
-				     case 2 :// 数据入库
-				    	 break;
-				     case 3 : //更新成功
-				    	 mDialog.dismiss();
-				    	 showDialog("更新完成么么哒~");
-				    	 break;
-				     case 4 :// 更新失败
-				    	 mDialog.dismiss();
-				    	 showDialog("更新失败！请重新检查联网情况");
-				    	 break;
-				     default : break;
-				     //progressDiolog
+				  case 0:    //开始联网
+					  mDialog = ProgressDialog.show(HomeActivity.this, "数据更新", "正在玩命加载数据中...",true);
+					  break;
+				  case 1:    //数据正在下载 
+				      break;
+				  case 2:   //数据入库
+					  break;
+				  case 3:   //更新成功
+				      mDialog.dismiss();
+				      showDialog("更新完成么么哒~");
+				      initViewPager();
+				      break;
+				  case 4:   //更新失败
+				      mDialog.dismiss();
+				      showDialog("更新失败！请重新检查联网情况");
+				      break;
+				  case 5:   //数据不需要更新
+				      mDialog.dismiss();
+				      showDialog("更新完成么么哒~");
+				      initViewPager();					  
+					  break;
+				  case 6:  //刚刚发现数据更新 
+					  Controller.instance(HomeActivity.this).update(this);
+					  break;
 				};
-				super.handleMessage(msg);
 			}
+			
 		});
 		
 		initView();
@@ -75,7 +94,7 @@ public class HomeActivity extends Activity {
 		return true;
 	}
 	
-    public void initView(){
+    private void initView(){
     	DisplayMetrics dm = new DisplayMetrics();
     	getWindowManager().getDefaultDisplay().getMetrics(dm);
     	int ScreenHeight = dm.heightPixels;
@@ -108,7 +127,7 @@ public class HomeActivity extends Activity {
     	chooseLayout.setLayoutParams(chooseParams);
     }
 
-    public void initListener(){
+    private void initListener(){
     	RelativeLayout stallList = (RelativeLayout) findViewById(R.id.stall_list);
     	stallList.setOnClickListener(new OnClickListener() {
 			
@@ -177,7 +196,46 @@ public class HomeActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-    	
-    	
     }
+    
+    public void initViewPager(){
+		viewpage = (ViewPager) findViewById(R.id.view_pager_show);
+		ViewPagerAdapter mAdapter = new ViewPagerAdapter(this, Controller.instance(this).getAllList());
+		viewpage.setAdapter(mAdapter);
+		StartScroll();
+    }
+	private void StartScroll() {
+		// TODO Auto-generated method stub
+		scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+		scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 3, TimeUnit.SECONDS);
+	}
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		scheduledExecutorService.shutdownNow();
+		super.onStop();
+	}
+	
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		if(scheduledExecutorService!=null){
+			scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+			scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 3, TimeUnit.SECONDS);
+		}
+		super.onStart();
+	}
+
+	private class ScrollTask implements Runnable {
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			synchronized (viewpage){
+				currentItem = (currentItem + 1);
+				viewPagerHandler.obtainMessage().sendToTarget();
+			}
+		}
+		
+	}
 }
