@@ -57,7 +57,8 @@
          android:layout_below="@id/mainFrame_head"
          android:divider="#00000000"
          android:dividerHeight="20dp"  
-         android:childDivider="#33223136"      
+         android:childDivider="#33223136" 
+         android:layout_marginBottom="20dp"     
         ></ExpandableListView>
     
     
