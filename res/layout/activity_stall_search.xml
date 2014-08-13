@@ -22,7 +22,7 @@
             android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_centerInParent="true"
-            android:text="搜索摊位"/>
+            android:text="搜索摊位/本子"/>
         <ImageView
             android:id="@+id/search_button"
             android:layout_alignParentRight="true"
